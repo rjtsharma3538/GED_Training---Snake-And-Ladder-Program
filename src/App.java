@@ -18,16 +18,18 @@ public class App {
             if (option == no_move) {
                 System.out.println("no_move -> " + curr_pos);
             } else if (option == ladder) {
-                if (curr_pos + dice_num == 100)
+                if (curr_pos + dice_num == 100) {
+                    curr_pos = 100;
                     System.out.println(" u won -> " + curr_pos);
-                else if (curr_pos + dice_num < 100)
+                } else if (curr_pos + dice_num < 100) {
+                    curr_pos += dice_num;
                     System.out.println("ladder -> " + curr_pos);
-                else
+                } else
                     System.out.println("ladder but no move -> " + curr_pos);
             } else {
                 curr_pos = Math.max(0, curr_pos - dice_num);
                 System.out.println("snake -> " + curr_pos);
             }
-        }   
+        }
     }
 }
